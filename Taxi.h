@@ -15,37 +15,19 @@ class Taxi {
 		
 	public:
 		// Params constructor
-		Taxi(const Driver& driver, const string& licensePlate, const string& model, int year, const string& engine) {
-			id = counter;
-			this->driver = driver;
-		    this->licensePlate = licensePlate;
-		    this->model = model;
-		    this->year = year;
-		    this->engine = engine;
-		    isOnATravel = false;
-		    
+		Taxi(const Driver& driver, const string& licensePlate, const string& model, int year, const string& engine) : 
+		id(counter), 
+		driver(driver), 
+		licensePlate(licensePlate), 
+		model(model), 
+		year(year), 
+		engine(engine),
+		isOnATravel(false) {
 		    if(year >= 2010 && year <= 2014) {
 		    	category = "Tradicional";
 			} else if(year >= 2015) {
 				category = "Ejecutiva";
 			}
-		    
-		    counter++;
-		}
-		
-		// Empty constructor
-		Taxi(int year) {
-			id = counter;
-			this->year = year;
-			
-		    isOnATravel = false;
-		    
-		    if(year >= 2010 && year <= 2014) {
-		    	category = "Tradicional";
-			} else if(year >= 2015){
-				category = "Ejecutiva";
-			}
-		    
 		    counter++;
 		}
 		

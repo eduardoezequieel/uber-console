@@ -13,19 +13,14 @@ class Driver {
 		
 	public:
 	    // Params constructor
-	    Driver(const string& firstName, const string& lastName, const string& dui, const string& isss, const string& phone) {
-	        id = counter;
-	        this->firstName = firstName;
-	        this->lastName = lastName;
-	        this->dui = dui;
-	        this->isss = isss;
-	        this->phone = phone;
-	        counter++;
-	    }
-	
-	    // Empty constructor
-	    Driver() {
-	        id = counter;
+	    Driver(const string& firstName, const string& lastName, const string& dui, const string& isss, const string& phone) : 
+		id(counter),
+		firstName(firstName),
+		lastName(lastName),
+		dui(dui),
+		isss(isss),
+		phone(phone)
+		{
 	        counter++;
 	    }
 	

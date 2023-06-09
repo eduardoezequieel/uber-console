@@ -10,18 +10,15 @@ class Client {
 		
 	public:
 		// Params constructor
-		Client(const string& firstName, const string& lastName) {
+		Client(const string& firstName, const string& lastName) :
+		id(counter),
+		firstName(firstName),
+		lastName(lastName) {
 	        id = counter;
 	        this->firstName = firstName;
 	        this->lastName = lastName;
 	        counter++;
 	    }
-		
-		// Empty constructor
-		Client() {
-			id = counter;
-			counter++;
-		}
 		
 		// Getters		
 		int getId() const {
