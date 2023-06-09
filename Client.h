@@ -6,40 +6,44 @@ class Client {
 		int id;
 		string firstName;
 		string lastName;
-		static int contador;
+		static int counter;
 		
 	public:
-		int getId() {
-			return this -> id;
-		}
+		// Params constructor
+		Client(const string& firstName, const string& lastName) {
+	        id = counter;
+	        this->firstName = firstName;
+	        this->lastName = lastName;
+	        counter++;
+	    }
 		
-		string getFirstName() {
-			return this -> firstName;
-		}
-		
-		string getLastName() {
-			return this -> lastName;
-		}
-		
-		void setFirstName(string firstName) {
-			this -> firstName = firstName;
-		}
-		
-		void setLastName(string lastName) {
-			this -> lastName = lastName;
-		}
-		
-		Client(string firstName, string lastName) {
-			id = contador;
-			this -> firstName = firstName;
-			this -> lastName = lastName;
-			contador++;
-		}
-		
+		// Empty constructor
 		Client() {
-			id = contador;
-			contador++;
+			id = counter;
+			counter++;
 		}
+		
+		// Getters		
+		int getId() const {
+        	return id;
+	    }
+	
+	    string getFirstName() const {
+	        return firstName;
+	    }
+	
+	    string getLastName() const {
+	        return lastName;
+	    }
+		
+		// Setters
+		void setFirstName(const string& firstName) {
+        	this->firstName = firstName;
+	    }
+	
+	    void setLastName(const string& lastName) {
+	        this->lastName = lastName;
+	    }
 		
 		void print() {
 			cout << id << ". " << firstName << " " << lastName << endl;
